@@ -28,7 +28,7 @@ if (args[2] == '-h' || args[2] == '--help') {
         console.log('.env file does not exist!');
     } else {
         const allLines = fs.readFileSync('.env', 'utf8');
-        const lines = allLines.split(/\r?\n/);
+        const lines = allLines.split('\n').map(p => p.endsWith('\n') ? p.substring(0, p.length-1) : p);
         let i = 0;
         let count = lines.length;
         for(i=0;i<count;i++) {
