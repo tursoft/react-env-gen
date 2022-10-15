@@ -28,16 +28,15 @@ if (args[2] == '-h' || args[2] == '--help') {
         console.log('.env file does not exist!');
     } else {
         const allLines = fs.readFileSync('.env', 'utf8');
-        const lines = allLines.split('\n').map(p => p.endsWith('\n') ? p.substring(0, p.length-1) : p);
+        const lines = allLines.split('\n')
+                        .map(l => l.endsWith('\n') ? l.substring(0, l.length-1) : l)
+                        .map(l => l.split('='))
+                        .filter(l => (l[0] ?? '').trim() != '');
         let i = 0;
         let count = lines.length;
-        for(i=0;i<count;i++) {
+        for (i=0; i<count; i++) {
             const line = lines[i];
-            const [varname, varvalue] = line.split('=');
-            if ((varname ?? '').trim() == '') {
-                continue;
-            }
-
+            const [varname, varvalue] = line;
             json += `   "${varname}":"${varvalue}"`;
             if (i<(count-1)) {
                 json +=',\r\n';
