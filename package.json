@@ -1,7 +1,7 @@
 {
   "name": "env-gen-config",
-  "version": "1.1.10",
-  "description": "React convert .env file to env-config.js file (window.__env__ variables)",
+  "version": "1.1.11",
+  "description": "Converts .env file values or corresponsing overriden values to env-config.js file (window.__env__ variables)",
   "main": "index.js",
   "bin": {
     "react-env-gen": "./index.js"
