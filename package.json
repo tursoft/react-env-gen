@@ -1,14 +1,14 @@
 {
   "name": "env-gen-config",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "Converts .env file values or corresponsing overriden values to env-config.js file (window.__env__ variables)",
   "main": "index.js",
   "bin": {
-    "react-env-gen": "./index.js"
+    "env-gen-config": "./index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.github.com:tursoft/react-env-gen.git"
+    "url": "https://www.github.com:tursoft/env-gen-config.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
