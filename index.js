@@ -37,7 +37,9 @@ if (args[2] == '-h' || args[2] == '--help') {
             let count = lines.length;
             for (i=0; i<count; i++) {
                 const line = lines[i];
-                const [varname, varvalue] = line;
+                let [varname, varvalue] = line;
+                varvalue = process.env[varname] ?? varvalue;
+
                 json += `   "${varname}":"${varvalue}"`;
                 if (i<(count-1)) {
                     json +=',\r\n';

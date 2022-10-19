@@ -1,3 +1,5 @@
+# env-gen-config
+
 This cli command is used to automatically generate .env file to env-config.json that contains input parameters for any Single Page Application framework like react, angular etc.
 
 # Use Case
